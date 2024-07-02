@@ -109,15 +109,15 @@ if __name__ == "__main__":
         print("Got a path with",len(path),"milestones")
         # for ii,p in enumerate(path):  
         #     print(f"pt: {ii}: \n {p}")
-        path_array = np.asarray(path)
-        path_min_values = path_array.min(axis=0)
-        path_max_values = path_array.max(axis=0)
-        print("min_value: ",path_min_values)
-        print("max_value: ",path_max_values)
+        # path_array = np.asarray(path)
+        # path_min_values = path_array.min(axis=0)
+        # path_max_values = path_array.max(axis=0)
+        # print("min_value: ",path_min_values)
+        # print("max_value: ",path_max_values)
 
 
-        for ii,(min_value,max_value) in enumerate(zip(min_values,max_values)):
-            print(f"{ii} :min_value: {min_value} <= {path_min_values[ii]} <= {path_max_values[ii]} <= {max_value}")
+        # for ii,(min_value,max_value) in enumerate(zip(min_values,max_values)):
+        #     print(f"{ii} :min_value: {min_value} <= {path_min_values[ii]} <= {path_max_values[ii]} <= {max_value}")
     else:
         print("No feasible path was found")
 
