@@ -51,6 +51,9 @@ if __name__ == "__main__":
         joint_name = f"joint_{ii}"
         min_value = minmax_dict[joint_name]["min"]
         max_value = minmax_dict[joint_name]["max"]
+
+        # min_value = -np.pi
+        # max_value = np.pi
         print(f"{joint_name}: lower limit = {min_value} rad, upper limit = {max_value} rad.")
         min_values.append(min_value)
         max_values.append(max_value)
