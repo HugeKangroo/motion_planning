@@ -49,11 +49,11 @@ if __name__ == "__main__":
     #set limitation of joint 1~6
     for ii in range(1,7):
         joint_name = f"joint_{ii}"
-        min_value = minmax_dict[joint_name]["min"]
-        max_value = minmax_dict[joint_name]["max"]
+        # min_value = minmax_dict[joint_name]["min"]
+        # max_value = minmax_dict[joint_name]["max"]
 
-        # min_value = -np.pi
-        # max_value = np.pi
+        min_value = -np.pi
+        max_value = np.pi
         print(f"{joint_name}: lower limit = {min_value} rad, upper limit = {max_value} rad.")
         min_values.append(min_value)
         max_values.append(max_value)
@@ -66,11 +66,11 @@ if __name__ == "__main__":
 
 
     # build a cube as obstacle
-    obj = world.makeRigidObject("block")
-    block = primitives.box(1,0.5,1)
-    obj.geometry().set(block)
-    obj.appearance().setColor(1.0,0.1,0.1,1.0)
-    obj.geometry().translate((1.2,0,0))
+    # obj = world.makeRigidObject("obstacle")
+    # obstacle = primitives.box(1,0.5,1)
+    # obj.geometry().set(obstacle)
+    # obj.appearance().setColor(1.0,0.1,0.1,1.0)
+    # obj.geometry().translate((1.2,0,0))
 
 
     space = robotplanning.make_space(world,robot,edgeCheckResolution=0.1)
