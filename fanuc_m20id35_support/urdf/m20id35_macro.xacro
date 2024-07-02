@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find fanuc_m20id35_support)/urdf/fanuc_common_materials.xacro"/>
+
+
+  <xacro:macro name="fanuc_m20id35" params="prefix">
+
+    <!-- collision geometry macros -->
+    <xacro:include filename="$(find fanuc_m20id35_support)/urdf/m20id35_base_link_geometry.xacro" />
+    <xacro:include filename="$(find fanuc_m20id35_support)/urdf/m20id35_link_1_geometry.xacro" />
+    <xacro:include filename="$(find fanuc_m20id35_support)/urdf/m20id35_link_2_geometry.xacro" />
+    <xacro:include filename="$(find fanuc_m20id35_support)/urdf/m20id35_link_3_geometry.xacro" />
+    <xacro:include filename="$(find fanuc_m20id35_support)/urdf/m20id35_link_4_geometry.xacro" />
+    <xacro:include filename="$(find fanuc_m20id35_support)/urdf/m20id35_link_5_geometry.xacro" />
+    <xacro:include filename="$(find fanuc_m20id35_support)/urdf/m20id35_link_6_geometry.xacro" />
+
+    <!-- visual geometry macros -->
+    <xacro:include filename="$(find fanuc_m20id35_support)/urdf/m20id35_base_link_visual.xacro" />
+    <xacro:include filename="$(find fanuc_m20id35_support)/urdf/m20id35_link_1_visual.xacro" />
+    <xacro:include filename="$(find fanuc_m20id35_support)/urdf/m20id35_link_2_visual.xacro" />
+    <xacro:include filename="$(find fanuc_m20id35_support)/urdf/m20id35_link_3_visual.xacro" />
+    <xacro:include filename="$(find fanuc_m20id35_support)/urdf/m20id35_link_4_visual.xacro" />
+    <xacro:include filename="$(find fanuc_m20id35_support)/urdf/m20id35_link_5_visual.xacro" />
+    <xacro:include filename="$(find fanuc_m20id35_support)/urdf/m20id35_link_6_visual.xacro" />
+
+    <!-- link list -->
+    <link name="${prefix}base_link">
+      <xacro:base_link_geometry />
+      <xacro:base_link_visual />
+      <xacro:include filename="$(find fanuc_m20id35_support)/urdf/m20id35_base_link_inertial.xacro" />
+    </link>
+
+
+    <link name="${prefix}link_1">
+      <xacro:link_1_geometry />
+      <xacro:link_1_visual />
+      <xacro:include filename="$(find fanuc_m20id35_support)/urdf/m20id35_link_1_inertial.xacro" />
+    </link>
+
+
+    <link name="${prefix}link_2">
+      <xacro:link_2_geometry />
+      <xacro:link_2_visual />
+      <xacro:include filename="$(find fanuc_m20id35_support)/urdf/m20id35_link_2_inertial.xacro" />
+    </link>
+
+
+    <link name="${prefix}link_3">
+      <xacro:link_3_geometry />
+      <xacro:link_3_visual />
+      <xacro:include filename="$(find fanuc_m20id35_support)/urdf/m20id35_link_3_inertial.xacro" />
+    </link>
+
+    
+    <link name="${prefix}link_4">
+      <xacro:link_4_geometry />
+      <xacro:link_4_visual />
+      <xacro:include filename="$(find fanuc_m20id35_support)/urdf/m20id35_link_4_inertial.xacro" />
+    </link>
+
+
+    <link name="${prefix}link_5">
+      <xacro:link_5_geometry />
+      <xacro:link_5_visual />
+      <xacro:include filename="$(find fanuc_m20id35_support)/urdf/m20id35_link_5_inertial.xacro" />
+    </link>
+
+
+    <link name="${prefix}link_6">
+      <xacro:link_6_geometry />
+      <xacro:link_6_visual />
+      <xacro:include filename="$(find fanuc_m20id35_support)/urdf/m20id35_link_6_inertial.xacro" />
+    </link>
+    
+    <!-- end of link list -->
+
+    <!-- joint list -->
+    <joint type="revolute" name="${prefix}joint_1">
+      <origin
+      xyz="0 0 0.14695"
+      rpy="0 0 0" />
+      <axis xyz="0 0 1"/>
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}link_1"/>
+      <limit
+      lower="-2.9671"
+      upper="2.9671"
+      effort="0"
+      velocity="0" />
+    </joint>
+    <joint type="revolute" name="${prefix}joint_2">
+      <origin
+      xyz="0.075 -0.064917 0.27805"
+      rpy="0 0 0" />
+      <axis xyz="0 1 0"/>
+      <parent link="${prefix}link_1"/>
+      <child link="${prefix}link_2"/>
+      <limit
+      lower="-1.7453"
+      upper="2.7925"
+      effort="0"
+      velocity="0" />
+    </joint>
+    <joint type="revolute" name="${prefix}joint_3">
+      <origin
+      xyz="0 0 0.84"
+      rpy="0 0 0" />
+      <axis xyz="0 -1 0"/>
+      <parent link="${prefix}link_2"/>
+      <child link="${prefix}link_3"/>
+      <limit
+      lower="-1.5708"
+      upper="3.8397"
+      effort="0"
+      velocity="0" />
+    </joint>
+    <joint type="revolute" name="${prefix}joint_4">
+      <origin
+      xyz="0.29553 0.059917 0.215"
+      rpy="0 0 0" />
+      <axis xyz="-1 0 0"/>
+      <parent link="${prefix}link_3"/>
+      <child link="${prefix}link_4"/>
+      <limit
+      lower="-3.4907"
+      upper="3.4907"
+      effort="0"
+      velocity="0" />
+    </joint>
+    <joint type="revolute" name="${prefix}joint_5">
+      <origin
+      xyz="0.59433 0 0"
+      rpy="0 0 0" />
+      <axis xyz="0 -1 0"/>
+      <parent link="${prefix}link_4"/>
+      <child link="${prefix}link_5"/>
+      <limit
+      lower="-2.4435"
+      upper="2.4435"
+      effort="0"
+      velocity="0" />
+    </joint>
+    <joint type="revolute" name="${prefix}joint_6">
+      <origin
+      xyz="0.0878 0 0"
+      rpy="0 0 0" />
+      <axis xyz="-1 0 0"/>
+      <parent link="${prefix}link_5"/>
+      <child link="${prefix}link_6"/>
+      <limit
+      lower="-4.7124"
+      upper="4.7124"
+      effort="0"
+      velocity="0" />
+    </joint>
+
+    
+    <!-- end of joint list -->
+
+    <!-- ROS base_link to FANUC World Coordinates transform -->
+    <link name="${prefix}base" />
+    <joint name="${prefix}base_link-base" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}base"/>
+    </joint>
+
+    <!-- ROS-Industrial 'flange' frame: attachment point for EEF models -->
+    <link name="${prefix}flange" />
+    <joint name="${prefix}joint_6-flange" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent link="${prefix}link_6" />
+      <child link="${prefix}flange" />
+    </joint>
+
+    <!-- ROS-Industrial 'tool0' frame: all-zeros tool frame -->
+    <link name="${prefix}tool0" />
+    <joint name="${prefix}link_6-tool0" type="fixed">
+      <!-- <origin xyz="0.1 0 0" rpy="${pi} ${-pi/2.0} 0" /> -->
+      <origin xyz="0.1 0 0" rpy="${pi/2.0} 0 ${pi/2.0}" />
+      <parent link="${prefix}flange" />
+      <child link="${prefix}tool0" />
+    </joint>
+
+    <xacro:property name="h_pouring_box" value="0.129" />
+    <xacro:property name="r_pouring_box" value="0.055" />
+
+    <!-- 'Pouring box tip' frame: attached to the tool frame -->
+    <link name="${prefix}pouring_box_tip" />
+    <joint name="${prefix}link_6-tool0-pouring_box_tip" type="fixed">
+      <origin xyz="${-r_pouring_box} ${h_pouring_box/2.0} 0" rpy="0 0 0" /> <!-- Based on pouring box (EMATT) specs -->
+      <parent link="${prefix}tool0" />
+      <child link="${prefix}pouring_box_tip" />
+    </joint>
+
+    <!-- 'Pouring box bottom' frame: attached to the tool frame -->
+    <link name="${prefix}pouring_box_bottom" />
+    <joint name="${prefix}link_6-tool0-pouring_box_bottom" type="fixed">
+      <origin xyz="0. ${-h_pouring_box/2.0} 0." rpy="0 0 0" /> <!-- Based on pouring box (EMATT) specs -->
+      <parent link="${prefix}tool0" />
+      <child link="${prefix}pouring_box_bottom" />
+    </joint>
+
+  </xacro:macro>
+</robot>

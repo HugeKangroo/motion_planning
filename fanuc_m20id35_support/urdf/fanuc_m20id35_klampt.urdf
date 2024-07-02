@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="fanuc_m20id35_support">
+  
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.029956 0.0043067 0.079447"
+        rpy="0 0 0" />
+      <mass
+        value="8.0046" />
+      <inertia
+        ixx="0.27757"
+        ixy="0.0024298"
+        ixz="0.0044128"
+        iyy="0.11961"
+        iyz="0.00051807"
+        izz="0.3602" />
+    </inertial>
+
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanuc_m20id35_support/meshes/m20id35/visual/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanuc_m20id35_support/meshes/m20id35/collision/base_link.STL" />
+      </geometry>
+    </collision>
+
+  </link>
+
+
+
+  <link
+    name="link_1">
+    <inertial>
+      <origin
+        xyz="0.011325 0.023364 0.18432"
+        rpy="0 0 0" />
+      <mass
+        value="18.965" />
+      <inertia
+        ixx="0.33664"
+        ixy="0.027534"
+        ixz="-0.014116"
+        iyy="0.34347"
+        iyz="-0.040551"
+        izz="0.30547" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanuc_m20id35_support/meshes/m20id35/visual/link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.86 0.86 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanuc_m20id35_support/meshes/m20id35/collision/link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_1"
+    type="continuous">
+    <origin
+      xyz="0 0 0.14695"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.9671"
+      upper="2.9671"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_2">
+    <inertial>
+      <origin
+        xyz="-0.047134 -0.1217 0.35459"
+        rpy="0 0 0" />
+      <mass
+        value="20.743" />
+      <inertia
+        ixx="1.9257"
+        ixy="-0.023227"
+        ixz="0.048431"
+        iyy="1.9687"
+        iyz="-0.033373"
+        izz="0.12978" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanuc_m20id35_support/meshes/m20id35/visual/link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.86 0.86 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanuc_m20id35_support/meshes/m20id35/collision/link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_2"
+    type="continuous">
+    <origin
+      xyz="0.075 -0.064917 0.27805"
+      rpy="0 0 0" />
+    <parent
+      link="link_1" />
+    <child
+      link="link_2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.7453"
+      upper="2.7925"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_3">
+    <inertial>
+      <origin
+        xyz="0.14093 0.092498 0.11361"
+        rpy="0 0 0" />
+      <mass
+        value="13.46" />
+      <inertia
+        ixx="0.22353"
+        ixy="-0.010171"
+        ixz="-0.095897"
+        iyy="0.2771"
+        iyz="-0.001707"
+        izz="0.21564" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanuc_m20id35_support/meshes/m20id35/visual/link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.86 0.86 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanuc_m20id35_support/meshes/m20id35/collision/link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_3"
+    type="continuous">
+    <origin
+      xyz="0 0 0.84"
+      rpy="0 0 0" />
+    <parent
+      link="link_2" />
+    <child
+      link="link_3" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.5708"
+      upper="3.8397"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_4">
+    <inertial>
+      <origin
+        xyz="0.27475 -0.062908 -0.00029044"
+        rpy="0 0 0" />
+      <mass
+        value="8.5457" />
+      <inertia
+        ixx="0.030837"
+        ixy="0.031321"
+        ixz="-0.00026802"
+        iyy="0.29973"
+        iyz="2.1038E-05"
+        izz="0.30323" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanuc_m20id35_support/meshes/m20id35/visual/link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.86 0.86 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanuc_m20id35_support/meshes/m20id35/collision/link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_4"
+    type="continuous">
+    <origin
+      xyz="0.29553 0.059917 0.215"
+      rpy="0 0 0" />
+    <parent
+      link="link_3" />
+    <child
+      link="link_4" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-3.4907"
+      upper="3.4907"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_5">
+    <inertial>
+      <origin
+        xyz="0.032119 -0.017753 -2.2633E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.54723" />
+      <inertia
+        ixx="0.0014431"
+        ixy="-0.00034665"
+        ixz="1.5895E-09"
+        iyy="0.0015698"
+        iyz="-3.7408E-09"
+        izz="0.0013588" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanuc_m20id35_support/meshes/m20id35/visual/link_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.78 0.78 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanuc_m20id35_support/meshes/m20id35/collision/link_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_5"
+    type="continuous">
+    <origin
+      xyz="0.59433 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="link_4" />
+    <child
+      link="link_5" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-2.4435"
+      upper="2.4435"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_6">
+    <inertial>
+      <origin
+        xyz="-0.03392 5.5511E-17 -4.4409E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.14987" />
+      <inertia
+        ixx="0.00020789"
+        ixy="7.3983E-21"
+        ixz="-5.1193E-20"
+        iyy="0.00013695"
+        iyz="5.0822E-21"
+        izz="0.00013691" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanuc_m20id35_support/meshes/m20id35/visual/link_6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fanuc_m20id35_support/meshes/m20id35/collision/link_6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_6"
+    type="continuous">
+    <origin
+      xyz="0.0878 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="link_5" />
+    <child
+      link="link_6" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-4.7124"
+      upper="4.7124"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <!--correct the coordinations-->
+  <link name="link_tool"/>
+  <joint name="tcp" type="fixed">
+    <origin rpy="3.141592653 -1.570796325 0" xyz="0 0 0"/>
+    <parent link="link_6"/>
+    <child link="link_tool"/>
+  </joint>
+  <link name="world"/>
+  <joint name="world_joint" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin rpy="0 0.0 0.0" xyz="0.0 0.0 -0.425"/>
+  </joint>
+<klampt package_root="../.." />
+</robot>

@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<robot name="fanuc_m20id35" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find fanuc_m20id35_support)/urdf/m20id35_macro.xacro"/>
+  <xacro:fanuc_m20id35 prefix=""/>
+  
+  <link name="world"/>
+  
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+
+</robot>
+

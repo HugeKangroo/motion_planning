@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro  name="link_3_geometry" params="geometry_type:=collision">
+        <xacro:element xacro:name="${geometry_type}">
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                filename="package://fanuc_m20id35_support/meshes/m20id35/collision/link_3.STL" />
+            </geometry>
+        </xacro:element>
+    </xacro:macro>
+</robot>

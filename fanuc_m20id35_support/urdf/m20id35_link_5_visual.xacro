@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:include filename="$(find fanuc_m20id35_support)/urdf/fanuc_common_materials.xacro"/>
+    <xacro:macro  name="link_5_visual" params="geometry_type:=visual">
+        <xacro:element xacro:name="${geometry_type}">
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                filename="package://fanuc_m20id35_support/meshes/m20id35/visual/link_5.STL" />
+            </geometry>
+            <xacro:material_fanuc_yellow />
+        </xacro:element>
+    </xacro:macro>
+</robot>
