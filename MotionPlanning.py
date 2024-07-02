@@ -54,7 +54,7 @@ if __name__ == "__main__":
 
         min_value = -np.pi
         max_value = np.pi
-        print(f"{joint_name}: lower limit = {min_value} rad, upper limit = {max_value} rad.")
+        # print(f"{joint_name}: lower limit = {min_value} rad, upper limit = {max_value} rad.")
         min_values.append(min_value)
         max_values.append(max_value)
 
@@ -111,17 +111,11 @@ if __name__ == "__main__":
     path = planner.getPath()
     if path is not None:
         print("Got a path with",len(path),"milestones")
-        # for ii,p in enumerate(path):  
-        #     print(f"pt: {ii}: \n {p}")
-        # path_array = np.asarray(path)
-        # path_min_values = path_array.min(axis=0)
-        # path_max_values = path_array.max(axis=0)
-        # print("min_value: ",path_min_values)
-        # print("max_value: ",path_max_values)
-
-
-        # for ii,(min_value,max_value) in enumerate(zip(min_values,max_values)):
-        #     print(f"{ii} :min_value: {min_value} <= {path_min_values[ii]} <= {path_max_values[ii]} <= {max_value}")
+        path_array = np.asarray(path)
+        path_min_values = path_array.min(axis=0)
+        path_max_values = path_array.max(axis=0)
+        for ii,(min_value,max_value) in enumerate(zip(min_values,max_values)):
+            print(f"joint limit {ii} :from {min_value} ~ {max_value}; path point {ii}: from {path_min_values[ii]} ~ {path_max_values[ii]}  ")
     else:
         print("No feasible path was found")
 
@@ -130,27 +124,21 @@ if __name__ == "__main__":
     print(len(V),"feasible milestones sampled,",len(E),"edges connected")
 
     # print("CSpace stats:")
-    spacestats = space.getStats()
-    for k in sorted(spacestats.keys()):
-        print(" ",k,":",spacestats[k])
+    # spacestats = space.getStats()
+    # for k in sorted(spacestats.keys()):
+    #     print(" ",k,":",spacestats[k])
 
-    print("Planner stats:")
-    planstats = planner.getStats()
-    for k in sorted(planstats.keys()):
-        print(" ",k,":",planstats[k])
+    # print("Planner stats:")
+    # planstats = planner.getStats()
+    # for k in sorted(planstats.keys()):
+    #     print(" ",k,":",planstats[k])
 
-    if path:
-        #save planned milestone path to disk
-        # print("Saving to my_plan.configs")
-        # resource.set("my_plan.configs",path,"Configs")
+    # if path:
 
-        #visualize path as a Trajectory resource
-        traj = RobotTrajectory(robot,range(len(path)),path)
-        # traj = RobotTrajectory(robot,range(len(V)),V)
 
-        resource.edit("Planned trajectory",traj,world=world)
+    #     #visualize path as a Trajectory resource
+    #     traj = RobotTrajectory(robot,range(len(path)),path)
+    #     # traj = RobotTrajectory(robot,range(len(V)),V)
 
-        # vis.add("world",world)
-        # vis.animate(("world",robot.getName()),traj)
-        # vis.add("trajectory",traj)   #this draws the end effector trajectory
-        # vis.spin(float('inf'))
+    #     resource.edit("Planned trajectory",traj,world=world)
+
