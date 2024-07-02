@@ -39,7 +39,7 @@ if __name__ == "__main__":
     
     world = klampt.WorldModel()
     robot = world.loadRobot(urdf_path)
-    print(f"load urdf joint limits: \n {robot.getJointLimits()}")
+    print(f"load urdf joint limits:{robot.getJointLimits()}")
 
     minmax_dict = read_joint_limits(urdf_path)
     # set world_joint
@@ -62,8 +62,8 @@ if __name__ == "__main__":
     min_values.append(0)
     max_values.append(0)
     #comment next line to have a feasible result
-    robot.setJointLimits(min_values,max_values)
-    print(f"set joint limits to: \n {robot.getJointLimits()}")
+    # robot.setJointLimits(min_values,max_values)
+    print(f"set joint limits to:{robot.getJointLimits()}")
 
 
     # build a cube as obstacle
