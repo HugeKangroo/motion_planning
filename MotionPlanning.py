@@ -62,7 +62,7 @@ if __name__ == "__main__":
     min_values.append(0)
     max_values.append(0)
     #comment next line to have a feasible result
-    # robot.setJointLimits(min_values,max_values)
+    robot.setJointLimits(min_values,max_values)
     print(f"set joint limits to: \n {robot.getJointLimits()}")
 
 
